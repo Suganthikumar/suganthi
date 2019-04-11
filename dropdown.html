@@ -1,0 +1,66 @@
+<html>
+<body>
+
+<select id="Education" onchange="funct()">
+  <option value=" "></option>
+  <option value="UG">UG</option>
+  <option value="PG">PG</option>
+  <option value="PHD">PHD</option>
+</select>
+<select id="Undergraduate" disabled>
+  <option value="Arts">Arts</option>
+  <option value="BBA">BBA</option>
+</select>
+<select id="Postgraduate" disabled>
+  <option value="Medicine">Medicine</option>
+  <option value="MBA">MBA</option>
+</select>
+<select id="PHD" disabled>
+  <option value="IT">IT</option>
+  <option value="MCA">MCA</option>
+</select>
+<input type="checkbox" id="v3" name="Edu" value="Accept" onclick="nafe()">Accept<br>
+<input type="button" id="but" value="click" disabled>
+
+<script>
+function funct()
+{
+  var E=document.getElementById("Education").value; 
+  if(E=="UG")
+  {
+     document.getElementById("Undergraduate").disabled=false;
+	 document.getElementById("PHD").disabled=true;
+	 document.getElementById("Postgraduate").disabled=true;
+	 
+  }
+  else if(E=="PG")
+  {
+     document.getElementById("Postgraduate").disabled=false;
+	 document.getElementById("Undergraduate").disabled=true;
+	 document.getElementById("PHD").disabled=true;
+  }
+  else if(E=="PHD")
+  {
+     document.getElementById("PHD").disabled=false;
+	 document.getElementById("Postgraduate").disabled=true;
+	 document.getElementById("Undergraduate").disabled=true;
+	 
+  }
+ }
+
+function nafe()
+{
+var n=document.getElementsByName("Edu"); 
+if(n[0].checked)
+{
+	document.getElementById("but").disabled=false;
+} 
+else
+{
+    document.getElementById("but").disabled=true;
+}
+}
+</script> 
+</body>
+</html>
+
